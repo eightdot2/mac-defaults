@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Run without downloading:
-# curl curl https://raw.githubusercontent.com/eightdot2/dotfiles/master/.macos | bash
+# curl https://raw.githubusercontent.com/eightdot2/dotfiles/master/.macos | bash
 
 HOSTNAME="Copernicus"
 TIMEZONE="Europe/London" # 'systemsetup -listtimezones'
@@ -143,7 +143,7 @@ defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 defaults write com.apple.finder ShowStatusBar -bool true
 
 # Use list view in all Finder windows by default
-# Four-letter codes for the other view modes: `icnv`, `clmv`, `Flwv`, `Nlsv` (icon, column, coverflow, list)
+# Possible view modes: `icnv`, `clmv`, `Flwv`, `Nlsv` (icon, column, coverflow, list)
 defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
 # Avoid creating .DS_Store files on network or USB volumes
