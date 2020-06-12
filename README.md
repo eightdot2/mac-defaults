@@ -1,2 +1,4 @@
 # dotfilage
-My own personal new MAc build scripts, desktop defdaults and other settings. Quite basic, and ever evolving. Dotfiles solution with dotbot to follow soon.
+My personal dotfiles solution, scripts to setup a fresh MacOS install, including desktop defdaults, installing all apps and configuring various other settings. Quite basic, and constantly changing. A Dotfiles solution, probably with dotbot to follow soon.
+
+
