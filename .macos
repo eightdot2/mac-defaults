@@ -1,10 +1,13 @@
 #!/bin/sh
 
+# This file is intended as a run-once to setup a new machine
+
 # Run without downloading:
 # curl https://raw.githubusercontent.com/eightdot2/dotfiles/master/.macos | bash
 
+# Set hostname and timezone, to fiond your local timezone: 'systemsetup -listtimezones'
 HOSTNAME="Copernicus"
-TIMEZONE="Europe/London" # 'systemsetup -listtimezones'
+TIMEZONE="Europe/London" 
 
 # Close all open System Preferences panes before making changes
 osascript -e 'tell application "System Preferences" to quit'
@@ -311,7 +314,7 @@ echo "   ▶ Done - it would be a good idea to reboot now"
 # Wallpaper: Set dark grey (stone) for all screens
 # Keyboard: Remap the caps lock to ESC for all keyboards
 # Themes: Install & set Dracula theme for vi, iterm, VSC (probably use zplug)
-# Create my own brew tap instead of listing all the apps to install in the script?
+# Is it better to create my own brew tap instead of listing all the apps to install in the script?
 # Apps: Do not warn if apps are already installed - although technically this script is for a new build
 # End of script: Add a multiple choice at the end to offer hit (RETURN) to restart or (q) quit
 #######################################################################################################
