@@ -21,7 +21,7 @@ sudo softwareupdate -i -a
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Install xcode to get git installed prior to homebrew
-xcode-select --install
+# xcode-select --install
 
 echo "   ▶ Checking if homebrew is already installed"
 if test ! $(which brew); then
