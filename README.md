@@ -1,4 +1,5 @@
 # dotfilage
-My personal dotfiles solution, scripts to setup a fresh MacOS install, including desktop defdaults, installing all apps and configuring various other settings. Quite basic, and constantly changing. A Dotfiles solution, probably with dotbot to follow soon.
+My personal dotfiles solution, including scripts to setup a fresh MacOS install, configuring desktop defaults, installing apps and various other settings. Quite basic, and constantly changing. A proper 
+Dotfiles solution, probably with dotbot to follow soon.
 
 
