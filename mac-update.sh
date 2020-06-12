@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# This file is intended to be run every so often to update MacOS
+
 # Install Homebrew
 if test ! $(which brew); then
   echo "   ▶ installing homebrew"
