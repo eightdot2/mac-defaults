@@ -21,7 +21,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 echo "   ▶ Checking if homebrew is already installed"
 if test ! $(which brew); then
   echo "   ▶ ....it's not, installing Homebrew."
-  ruby -e "$(curl -fsSl https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  /bin/bash -c "$(curl -fsSl https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 fi
 
 # Update homebrew recipes & tap casks
