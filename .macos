@@ -15,7 +15,7 @@ osascript -e 'tell application "System Preferences" to quit'
 # Ask for the administrator password
 sudo -v
 
-softwareupdate --all --install 
+softwareupdate -i -a
 
 # Keep-alive: update existing `sudo` time stamp until script has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
