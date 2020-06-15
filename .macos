@@ -48,6 +48,7 @@ cliapps=(
   speedtest-cli
   telnet
   wget
+  shfmt
 )
 
 echo "   ▶ Installing cli apps with brew"
