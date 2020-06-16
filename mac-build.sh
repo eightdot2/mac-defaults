@@ -3,7 +3,7 @@
 # This file is intended as a run-once to setup a new machine
 
 # Run without downloading:
-# curl -LJ0 https://raw.githubusercontent.com/eightdot2/dotfiles/master/.macos | bash
+# curl -LJ0 https://raw.githubusercontent.com/eightdot2/dotfiles/master/mac-build.sh | bash
 
 # Set hostname and timezone, to fiond your local timezone: 'systemsetup -listtimezones'
 HOSTNAME="Copernicus"
