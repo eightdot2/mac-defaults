@@ -49,6 +49,7 @@ cliapps=(
   telnet
   wget
   shfmt
+  ncdu
 )
 
 echo "   ▶ Installing cli apps with brew"
