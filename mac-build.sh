@@ -50,6 +50,9 @@ cliapps=(
   wget
   shfmt
   ncdu
+  htop
+  tldr
+  fd
 )
 
 echo "   ▶ Installing cli apps with brew"
