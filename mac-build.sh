@@ -327,4 +327,15 @@ echo "   ▶ Done - it would be a good idea to reboot now"
 # Is it better to create my own brew tap instead of listing all the apps to install in the script?
 # Apps: Do not warn if apps are already installed - although technically this script is for a new build
 # End of script: Add a multiple choice at the end to offer hit (RETURN) to restart or (q) quit
+
+# sort iterm prefs out
+# Specify the preferences directory
+# defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/dotfiles/iterm2"
+# Tell iTerm2 to use the custom preferences in the directory
+# defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+
+
+
+
+
 #######################################################################################################
