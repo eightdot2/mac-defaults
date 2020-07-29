@@ -1,49 +1,58 @@
-  tap bash-completion
-  tap bat
-  tap git
-  tap iperf
-  tap macvim
-  tap mas
-  tap nmap
-  tap speedtest-cli
-  tap telnet
-  tap wget
-  tap shfmt
-  tap ncdu
-  tap htop
-  tap tldr
-  tap fd
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-versions"
+tap "homebrew/core"
+tap "homebrew/services"
+tap "bash-completion"
+tap "bat"
+tap "git"
+tap "iperf"
+tap "macvim"
+tap "mas"
+tap "nmap"
+tap "speedtest-cli"
+tap "telnet"
+tap "wget"
+tap "shfmt"
+tap "ncdu"
+tap "htop"
+tap "tldr"
+tap "fd"
 
-  alfred
-  brave-browse
-  caffeine
-  charles
-  dash
-  docker
-  easyfind
-  firefo 
-  gimp 
-  github 
-  google-backup-and-sync 
-  google-chrome 
-  google-chrome-canary 
-  iterm2 
-  java 
-  jdownloader 
-  little-snitch 
-  nordvpn 
-  powershell 
-  pritunl 
-  royal-tsx 
-  shimo 
-  slack 
-  sonos 
-  sourcetree 
-  swinsian 
-  tor-browser 
-  visual-studio-code 
-  vlc 
-  vnc-viewer 
-  webstorm 
-  wireshark 
-  zoom
+brew "alfred"
+brew "python"
+brew "ansible
+brew "bravebrowse"
+brew "caffeine"
+brew "charles"
+brew "dash"
+brew "docker"
+brew "easyfind"
+brew "firefox"
+brew "gimp"
+brew "github"
+brew "google-backup-and-sync"
+brew "google-chrome"
+brew "google-chrome-canary"
+brew "iterm2"
+brew "java"
+brew "jdownloader"
+brew "little-snitch"
+brew "nordvpn"
+brew "powershell"
+brew "pritunl"
+brew "royal-tsx"
+brew "shimo"
+brew "slack"
+brew "sonos"
+brew "sourcetree"
+brew "swinsian"
+brew "tor-browser"
+brew "visual-studio-code"
+brew "visusl-studio-code-insiders"
+brew "vlc"
+brew "vnc-viewer"
+brew "webstorm"
+brew "wireshark"
+brew "zoom"
+brew "zsh-completions"
