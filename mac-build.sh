@@ -2,11 +2,15 @@
 
 # This file is intended as a run-once to setup a new machine
 
+echo
+echo "   ▶ Set hostname, connect to wifi, clone github mac-defaults repo and then run this script"
+echo
+read -p "   ▶ Press enter to continue or control+c to cancel"
+
 # Run without downloading:
 # curl -LJ0 https://raw.githubusercontent.com/eightdot2/dotfiles/master/mac-build.sh | bash
 
 # Set hostname and timezone, to fiond your local timezone: 'systemsetup -listtimezones'
-HOSTNAME="Copernicus"
 TIMEZONE="Europe/London" 
 
 # Close all open System Preferences panes before making changes
@@ -23,13 +27,14 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # Install xcode to get git installed prior to homebrew
 # xcode-select --install
 
-echo "   ▶ Checking if homebrew is already installed"
-if test ! $(which brew); then
-  echo "   ▶ ....it's not, installing Homebrew."
-  /bin/bash -c "$(curl -fsSl https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-fi
+# install homebrew if it's missing
+  if ! command -v brew >/dev/null 2>&1; then
+    echo "Installing homebrew"
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  fi
 
 # Update homebrew recipes & tap casks
+echo
 echo "   ▶ Updating homebrew recipes & installing casks"
 brew update && brew upgrade
 brew cask upgrade
@@ -55,6 +60,7 @@ cliapps=(
   fd
 )
 
+echo
 echo "   ▶ Installing cli apps with brew"
 brew install ${cliapps[@]}
 
@@ -106,20 +112,6 @@ brew cleanup -v
 
 # install from app store 
 mas install 441258766 # magnet
-
-echo "Generating an RSA token for GitHub"
-mkdir -p ~/.ssh
-touch ~/.ssh/config
-ssh-keygen -t rsa -b 4096 -C "grant.cassin@gmail.com"
-echo "Host *\n AddKeysToAgent yes\n UseKeychain yes\n IdentityFile ~/.ssh/id_rsa" | tee ~/.ssh/config
-eval "$(ssh-agent -s)"
-echo "run 'pbcopy < ~/.ssh/id_rsa.pub' and paste that into GitHub"
-
-echo "   ▶ Setting the computer name to $HOSTNAME"
-sudo scutil --set ComputerName $HOSTNAME
-sudo scutil --set HostName $HOSTNAME
-sudo scutil --set LocalHostName $HOSTNAME
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string $HOSTNAME
 
 echo "   ▶ Setting the timezone to $TIMEZONE"
 systemsetup -settimezone $TIMEZONE > /dev/null
@@ -295,11 +287,6 @@ defaults write com.apple.commerce AutoUpdateRestartRequired -bool true
 # Printer: automatically quit printer app once the print jobs complete
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 
-# Disable Spotlight indexing for volumes that gets mounted and has not yet
-# been indexed before.
-# Use `sudo mdutil -i off "/Volumes/XYZ"` to stop indexing any volume.
-sudo defaults write /.Spotlight-V100/VolumeConfiguration Exclusions -array "/Volumes"
-
 # Make sure indexing is enabled for the main volume
 sudo mdutil -i on / > /dev/null
 
@@ -312,30 +299,13 @@ sudo defaults write /Library/Preferences/com.apple.security GKAutoRearm -bool NO
 echo "   ▶ Defaults settings complete, restarting Finder now"
 killall -HUP Finder
 
-git clone https://github.com/dracula/iterm.git "${HOME}/.config/themes"
-
 echo "   ▶ Done - it would be a good idea to reboot now"
 
 ######################################################################################################
 # Stuff still to do ▼
 ######################################################################################################
-# Dotfiles: install dotbot & clone dotfiles?
+# don't install if already installed
+# check if magnet installed first before trying
 # Chrome: Install extensions when installing chrome:-  lastpass, instapaper, trello, sprucemarks, chrome downloader, archdaily
-# Wallpaper: Set dark grey (stone) for all screens
 # Keyboard: Remap the caps lock to ESC for all keyboards
-# Themes: Install & set Dracula theme for vi, iterm, VSC (probably use zplug)
-# Is it better to create my own brew tap instead of listing all the apps to install in the script?
-# Apps: Do not warn if apps are already installed - although technically this script is for a new build
-# End of script: Add a multiple choice at the end to offer hit (RETURN) to restart or (q) quit
-
-# sort iterm prefs out
-# Specify the preferences directory
-# defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/dotfiles/iterm2"
-# Tell iTerm2 to use the custom preferences in the directory
-# defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
-
-
-
-
-
 #######################################################################################################
