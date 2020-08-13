@@ -76,6 +76,7 @@ apps=(
   firefox 
   gimp 
   github 
+  gitkraken
   google-backup-and-sync 
   google-chrome 
   google-chrome-canary 
