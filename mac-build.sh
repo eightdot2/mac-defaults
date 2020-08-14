@@ -75,8 +75,7 @@ apps=(
   easyfind 
   firefox 
   gimp 
-  github 
-  gitkraken
+  github
   google-backup-and-sync 
   google-chrome 
   google-chrome-canary 
