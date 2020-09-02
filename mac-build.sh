@@ -119,7 +119,7 @@ echo "   ▶ Setting the timezone to $TIMEZONE"
 systemsetup -settimezone $TIMEZONE > /dev/null
 
 echo "   ▶ Now configuring defaults write settings"
-echo '\n'
+echo
 
 ###############################################################################
 # Finder ▼
@@ -299,6 +299,7 @@ sudo mdutil -E / > /dev/null
 sudo defaults write /Library/Preferences/com.apple.security GKAutoRearm -bool NO
 
 echo "   ▶ Defaults settings complete, restarting Finder now"
+echo
 killall -HUP Finder
 
 echo "   ########################"
