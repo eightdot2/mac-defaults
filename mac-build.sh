@@ -8,7 +8,7 @@
 # curl -LJ0 https://raw.githubusercontent.com/eightdot2/mac-defaults/master/mac-build.sh | bash
 
 # Ask for the administrator password upfront
-sudo -v grant
+sudo -v -u grant
 
 # Keep-alive: update existing `sudo` time stamp until script has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
@@ -314,12 +314,13 @@ killall -HUP Finder
 echo "   ########################"
 echo "   ##  Done - reboot now ##"
 echo "   ########################"
+echo
+echo
 
 ######################################################################################################
 # Stuff still to do ▼
 ######################################################################################################
 # Dock to do - put system prefs in dock & downloads listed as Date Added, Folder & List
-# zone setting didnt work
 # turn firewall on
 # require pwd immediately after screensaver
 
