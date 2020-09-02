@@ -25,7 +25,9 @@ echo "   ▶ Setting the timezone to Europe/London"
 sudo systemsetup -settimezone $TIMEZONE > /dev/null
 
 # Set wallpaper
-osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/System/Library/Desktop Pictures/Solid Colors/Space Gray.png"'
+osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/System/Library/Desktop Pictures/Solid Colors/Stone.png"'
+
+sudo killall -HUP Finder
 
 # Close all open System Preferences panes before making changes
 sudo osascript -e 'tell application "System Preferences" to quit'
@@ -312,7 +314,7 @@ sudo defaults write /Library/Preferences/com.apple.security GKAutoRearm -bool NO
 echo "   ▶ Defaults settings complete, restarting Finder now"
 echo
 
-killall -HUP Finder
+sudo killall -HUP Finder
 
 echo "   ########################"
 echo "   ##  Done - reboot now ##"
