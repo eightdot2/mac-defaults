@@ -7,11 +7,6 @@
 # Subsequent maintenance scripts, clone with githib and run as needed
 # curl -LJ0 https://raw.githubusercontent.com/eightdot2/mac-defaults/master/mac-build.sh | bash
 
-echo
-echo "   ▶ Set hostname manually and connect to the internet"
-echo
-read -p "   ▶ Press enter to continue or control+c to cancel"
-
 # Set hostname and timezone, to find your local timezone: 'systemsetup -listtimezones'
 TIMEZONE="Europe/London" 
 
