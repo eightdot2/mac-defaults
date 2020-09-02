@@ -25,7 +25,7 @@ echo "   ▶ Setting the timezone to Europe/London"
 sudo systemsetup -settimezone $TIMEZONE > /dev/null
 
 # Set wallpaper
-# osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/System/Library/Desktop Pictures/Solid Colors/Space Gray.png"'
+osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/System/Library/Desktop Pictures/Solid Colors/Space Gray.png"'
 
 # Close all open System Preferences panes before making changes
 sudo osascript -e 'tell application "System Preferences" to quit'
