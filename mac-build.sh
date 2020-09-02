@@ -7,8 +7,11 @@
 # Subsequent maintenance scripts, clone with githib and run as needed
 # curl -LJ0 https://raw.githubusercontent.com/eightdot2/mac-defaults/master/mac-build.sh | bash
 
-# Ask for the administrator password
+# Ask for the administrator password upfront
 sudo -v
+
+# Keep-alive: update existing `sudo` time stamp until script has finished
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 echo
 echo "   ▶ Set hostname manually and connect to the internet"
@@ -18,16 +21,13 @@ read -p "   ▶ Press enter to continue or control+c to cancel"
 # Set hostname and timezone, to find your local timezone: 'systemsetup -listtimezones'
 sudo TIMEZONE="Europe/London" 
 
-echo "   ▶ Setting the timezone to $TIMEZONE"
+echo "   ▶ Setting the timezone to Europe/London"
 sudo systemsetup -settimezone $TIMEZONE > /dev/null
 
 # Close all open System Preferences panes before making changes
 sudo osascript -e 'tell application "System Preferences" to quit'
 
 sudo softwareupdate -i -a
-
-# Keep-alive: update existing `sudo` time stamp until script has finished
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Install xcode to get git installed prior to homebrew
 # xcode-select --install
@@ -123,8 +123,6 @@ brew cleanup -v
 echo "   ▶ Now configuring defaults write settings"
 echo
 
-sudo -v 
-
 ###############################################################################
 # Finder ▼
 ###############################################################################
@@ -185,6 +183,12 @@ defaults write com.apple.dock launchanim -bool false
 
 # Dock: do not show recently used apps
 defaults write com.apple.dock show-recents -bool FALSE
+
+# Dock: add chrome, system preferences and iterm to dock
+defaults write com.apple.dock persistent-apps -array-add '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Google Chrome.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>'
+defaults write com.apple.dock persistent-apps -array-add '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/System Preferences.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>'
+defaults write com.apple.dock persistent-apps -array-add '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/iterm.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>'
+
 
 ###############################################################################
 # Trackpad and Keyboard ▼
@@ -304,6 +308,7 @@ sudo defaults write /Library/Preferences/com.apple.security GKAutoRearm -bool NO
 
 echo "   ▶ Defaults settings complete, restarting Finder now"
 echo
+
 killall -HUP Finder
 
 echo "   ########################"
@@ -314,7 +319,7 @@ echo "   ########################"
 # Stuff still to do ▼
 ######################################################################################################
 # Dock to do - put system prefs in dock & downloads listed as Date Added, Folder & List
-# timezone setting didnt work
+# zone setting didnt work
 # turn firewall on
 # require pwd immediately after screensaver
 
