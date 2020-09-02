@@ -7,12 +7,6 @@
 # Subsequent maintenance scripts, clone with githib and run as needed
 # curl -LJ0 https://raw.githubusercontent.com/eightdot2/mac-defaults/master/mac-build.sh | bash
 
-# Ask for the administrator password upfront
-sudo su
-
-# Keep-alive: update existing `sudo` time stamp until script has finished
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
-
 echo
 echo "   ▶ Set hostname manually and connect to the internet"
 echo
@@ -124,6 +118,12 @@ brew cleanup -v
 # install from app store
 # mas signin email@address.com
 # mas install 441258766 # magnet
+
+# Ask for the administrator password upfront
+sudo su
+
+# Keep-alive: update existing `sudo` time stamp until script has finished
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 echo "   ▶ Now configuring defaults write settings"
 echo
