@@ -1,14 +1,16 @@
 #!/bin/sh
 
-# This file is intended as a run-once to setup a new machine
+# This script is currently used as a run-once new build macos build script.
+# The goal is for it to become an idempotent run anytime script for initial build and also to maintain settings.
+
+# For use as an initial build script - run without downloading using curl below...
+# Subsequent maintenance scripts, clone with githib and run as needed
+# curl -LJ0 https://raw.githubusercontent.com/eightdot2/mac-defaults/master/mac-build.sh | bash
 
 echo
-echo "   ▶ Set hostname, connect to wifi, clone github mac-defaults repo and then run this script"
+echo "   ▶ Set hostname manually and connect to the internet"
 echo
 read -p "   ▶ Press enter to continue or control+c to cancel"
-
-# Run without downloading:
-# curl -LJ0 https://raw.githubusercontent.com/eightdot2/mac-defaults/master/mac-build.sh | bash
 
 # Set hostname and timezone, to fiond your local timezone: 'systemsetup -listtimezones'
 TIMEZONE="Europe/London" 
@@ -299,13 +301,17 @@ sudo defaults write /Library/Preferences/com.apple.security GKAutoRearm -bool NO
 echo "   ▶ Defaults settings complete, restarting Finder now"
 killall -HUP Finder
 
-echo "   ▶ Done - it would be a good idea to reboot now"
+echo "   ########################"
+echo "   ##  Done - reboot now ##"
+echo "   ########################"
 
 ######################################################################################################
 # Stuff still to do ▼
 ######################################################################################################
 # don't install if already installed
-# check if magnet installed first before trying
+# check install location, change to appli
+# check if magnet gets installed
+# timer to reboot at end
 # Chrome: Install extensions when installing chrome:-  lastpass, instapaper, trello, sprucemarks, chrome downloader, archdaily
 # Keyboard: Remap the caps lock to ESC for all keyboards
 #######################################################################################################
