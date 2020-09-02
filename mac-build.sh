@@ -7,19 +7,22 @@
 # Subsequent maintenance scripts, clone with githib and run as needed
 # curl -LJ0 https://raw.githubusercontent.com/eightdot2/mac-defaults/master/mac-build.sh | bash
 
+# Ask for the administrator password
+sudo -v
+
 echo
 echo "   ▶ Set hostname manually and connect to the internet"
 echo
 read -p "   ▶ Press enter to continue or control+c to cancel"
 
-# Set hostname and timezone, to fiond your local timezone: 'systemsetup -listtimezones'
-TIMEZONE="Europe/London" 
+# Set hostname and timezone, to find your local timezone: 'systemsetup -listtimezones'
+sudo TIMEZONE="Europe/London" 
+
+echo "   ▶ Setting the timezone to $TIMEZONE"
+sudo systemsetup -settimezone $TIMEZONE > /dev/null
 
 # Close all open System Preferences panes before making changes
-osascript -e 'tell application "System Preferences" to quit'
-
-# Ask for the administrator password
-sudo -v
+sudo osascript -e 'tell application "System Preferences" to quit'
 
 sudo softwareupdate -i -a
 
@@ -112,14 +115,15 @@ brew cask install --appdir="/Applications" ${apps[@]}
 echo "   ▶ Cleaning up brew"
 brew cleanup -v
 
-# install from app store 
-mas install 441258766 # magnet
-
-echo "   ▶ Setting the timezone to $TIMEZONE"
-systemsetup -settimezone $TIMEZONE > /dev/null
+# currently mas signin from cli is no longer supported - see https://github.com/mas-cli/mas/issues/164
+# install from app store
+# mas signin email@address.com
+# mas install 441258766 # magnet
 
 echo "   ▶ Now configuring defaults write settings"
 echo
+
+sudo -v 
 
 ###############################################################################
 # Finder ▼
@@ -309,6 +313,11 @@ echo "   ########################"
 ######################################################################################################
 # Stuff still to do ▼
 ######################################################################################################
+# Dock to do - put system prefs in dock & downloads listed as Date Added, Folder & List
+# timezone setting didnt work
+# turn firewall on
+# require pwd immediately after screensaver
+
 # don't install if already installed
 # check install location, change to appli
 # check if magnet gets installed
