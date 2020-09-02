@@ -13,7 +13,7 @@ echo
 read -p "   ▶ Press enter to continue or control+c to cancel"
 
 # Set hostname and timezone, to find your local timezone: 'systemsetup -listtimezones'
-sudo TIMEZONE="Europe/London" 
+TIMEZONE="Europe/London" 
 
 echo "   ▶ Setting the timezone to Europe/London"
 sudo systemsetup -settimezone $TIMEZONE > /dev/null
