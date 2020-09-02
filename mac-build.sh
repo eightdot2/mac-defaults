@@ -191,8 +191,8 @@ defaults write com.apple.dock show-recents -bool FALSE
 
 # Dock: add chrome, system preferences and iterm to dock
 defaults write com.apple.dock persistent-apps -array-add '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/Google Chrome.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>'
-defaults write com.apple.dock persistent-apps -array-add '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/System/Applications/System Preferences.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>'
 defaults write com.apple.dock persistent-apps -array-add '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/iterm.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>'
+defaults write com.apple.dock persistent-apps -array-add '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/System/Applications/System Preferences.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>'
 
 
 ###############################################################################
@@ -324,15 +324,11 @@ echo
 
 ######################################################################################################
 # Stuff still to do ▼
-######################################################################################################
-# Dock to do - put system prefs in dock & downloads listed as Date Added, Folder & List
+#######################################################################################
 # turn firewall on
 # require pwd immediately after screensaver
-
-# don't install if already installed
-# check install location, change to appli
+# don't install brew apps if they are already installed
 # check if magnet gets installed
-# timer to reboot at end
-# Chrome: Install extensions when installing chrome:-  lastpass, instapaper, trello, sprucemarks, chrome downloader, archdaily
 # Keyboard: Remap the caps lock to ESC for all keyboards
+# Chrome: Install extensions when installing chrome:-  lastpass, instapaper, trello, sprucemarks, chrome downloader, archdaily
 #######################################################################################################
