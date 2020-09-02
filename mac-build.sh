@@ -8,7 +8,7 @@ echo
 read -p "   ▶ Press enter to continue or control+c to cancel"
 
 # Run without downloading:
-# curl -LJ0 https://raw.githubusercontent.com/eightdot2/dotfiles/master/mac-build.sh | bash
+# curl -LJ0 https://raw.githubusercontent.com/eightdot2/mac-defaults/master/mac-build.sh | bash
 
 # Set hostname and timezone, to fiond your local timezone: 'systemsetup -listtimezones'
 TIMEZONE="Europe/London" 
