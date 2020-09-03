@@ -65,38 +65,28 @@ brew install ${cliapps[@]}
 
 # List of apps to install
 apps=(
-  alfred 
   brave-browser
-  caffeine 
-  charles 
-  dash 
-  docker 
-  easyfind 
+  docker
   firefox 
   gimp 
   github
   google-backup-and-sync 
-  google-chrome 
-  google-chrome-canary 
+  google-chrome  
   iterm2 
-  java 
+  java
   jdownloader 
-  little-snitch 
   nordvpn 
   powershell 
   pritunl 
   royal-tsx 
-  shimo 
   slack 
   sonos 
-  sourcetree 
   swinsian 
   tor-browser 
   visual-studio-code 
   vlc 
   vnc-viewer 
-  webstorm 
-  wireshark 
+  wireshark
   zoom
 )
 
@@ -311,9 +301,9 @@ echo
 
 sudo killall -HUP Finder
 
-echo "   ########################"
-echo "   ##  Done - reboot now ##"
-echo "   ########################"
+echo "   #########################"
+echo "   ##  Done - reboot now  ##"
+echo "   #########################"
 echo
 echo
 
