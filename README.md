@@ -1,4 +1,4 @@
-# Scripts to automate MacOS build and updates
+## Scripts to automate MacOS build and updates
 
 `mac-build.sh` A personalised script to bootstrap a fresh MacOS 'out of the box' install, configuring numerous desktop defaults, installing various cli and gui apps with homebrew. 
 
