@@ -311,8 +311,8 @@ echo
 # Stuff still to do ▼
 #######################################################################################
 # turn firewall on
-# require pwd immediately after screensaver
-# don't install brew apps if they are already installed
+# require pwd immediately after screensaver still doesn't work
+# check installed apps, and don't install brew apps if they are already installed
 # check if magnet gets installed
 # Keyboard: Remap the caps lock to ESC for all keyboards
 # Chrome: Install extensions when installing chrome:-  lastpass, instapaper, trello, sprucemarks, chrome downloader, archdaily
