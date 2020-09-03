@@ -4,7 +4,7 @@
 # The goal is for it to become an idempotent run anytime script for initial build and also to maintain settings.
 
 # For use as an initial build script - run without downloading using curl below...
-# Subsequent maintenance scripts, clone with githib and run as needed
+# Subsequent maintenance scripts, clone with github and run as needed
 # curl -LJ0 https://raw.githubusercontent.com/eightdot2/mac-defaults/master/mac-build.sh | bash
 
 # Set hostname and timezone, to find your local timezone: 'systemsetup -listtimezones'
@@ -311,7 +311,10 @@ echo
 # Stuff still to do ▼
 #######################################################################################
 # turn firewall on
+# change the dock downloads icon to show as 'date added', 'folder', 'list'
+# set date and time automatically sync to 'apple europe'
 # require pwd immediately after screensaver still doesn't work
+# set mac updates to 'automatically keep my mac up to date'
 # check installed apps, and don't install brew apps if they are already installed
 # check if magnet gets installed
 # Keyboard: Remap the caps lock to ESC for all keyboards
