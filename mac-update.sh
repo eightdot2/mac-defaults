@@ -26,4 +26,3 @@ sudo softwareupdate -i -a --restart
 #   STUFF TO ADD? ▼   
 ########################################################################
 # add a multiple choice, i.e. press 1 to continue, any other key to quit
-# dotfiles solution - probably using dotbot
