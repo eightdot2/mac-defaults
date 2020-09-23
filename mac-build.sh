@@ -36,7 +36,7 @@ sudo softwareupdate -i -a
 echo
 echo "   ▶ Updating homebrew recipes & installing casks"
 brew update && brew upgrade
-brew cask upgrade
+brew upgrade --cask
 brew tap homebrew/cask-versions
 brew tap homebrew/cask-drivers
 
