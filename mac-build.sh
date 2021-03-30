@@ -77,7 +77,8 @@ apps=(
   jdownloader 
   nordvpn 
   powershell 
-  pritunl 
+  pritunl
+  rclone
   royal-tsx 
   slack 
   sonos 
